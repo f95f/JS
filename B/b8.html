@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - B8</title>
+    <script>
+   let testeFinal = function(text, number){
+    /*if(text == "mundojs"){
+        console.log("MundoJS");
+        return number;
+    }*/
+    let vetor = [];
+    let soma = 0;
+    switch(text){
+        case "mundojs":
+            console.log("MundoJS");
+            return number;
+        case "soma":
+            return (number/2) + (number*number);
+        case "vetor":
+            for(i = 0; i < 5; i++){
+                vetor[i] = number + i * 2;
+            }
+            return vetor;
+        case "booleano":
+            for(i = 0; i < 5; i++){
+                vetor[i] = number + i * 2;
+                soma = soma + vetor[i];
+            }
+            // return soma > 35;
+            if(soma > 35){
+                return true;
+            }
+            else{
+                return false;
+            }
+            break;
+        default:
+        return -1;
+    }
+}
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabooadah</title>
+    <style src = "css.css"></style>
+</head>
+<body onload = "greet();">
+    <main>
+        <header>
+            <h1 id = "greeter"></h1>
+        </header>
+        <section>
+            <label for="valor">Informe o número:</label>
+            <input type="number" id = "valor" name = "valor">
+            <input type="button" id = "calcular" value = "Calcular!" onclick = "calcular();">
+
+            <p>Resultado: </p><br>
+            <p id = "alerta"></p>
+            <select name="tab" id="res" size = "11">
+                <option id = "def">Informe um valor acima...</option>
+            </select>
+            <hr>
+        </section>
+        <footer>
+            <span><p>&copy; lorem ipsum - 2021</p></span>
+        </footer>
+    </main>
+
+
+
+    <script src = "scriptEx03.js"></script>
+</body>
+</html>

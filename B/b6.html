@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - B4</title>
+    <script>
+        /*  Fibonacci:
+            0,1,1,2,3,5,8...
+            Número em uma posição N = soma dos dois números anteriores.
+        */
+        function fibonacci(n){
+            let termos = [0, 1];
+            let index = 0;
+            let terc = 0;
+            console.log( termos[0]);
+            while(n != (index)){
+                
+                terc = termos[0] + termos[1]; 
+                termos[0] = termos[1];
+                termos[1] = terc;
+                console.log( termos[0]);
+                
+                index++;
+
+            }
+
+            
+
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

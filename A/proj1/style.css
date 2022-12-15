@@ -1,0 +1,45 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    padding: 100px 0;
+    text-align: center;
+}
+main{
+    margin: auto;
+    padding: 10px 10px;
+    width: 30%;
+    border: 2px solid blue;
+}
+section{
+    margin: 10px 0;
+}
+section#startButton{
+    display: none;
+    position: absolute;
+    background-color: black;
+    width: 30%;
+}
+span{
+    margin: 12% 0;
+}
+span#conta{
+    font-size: 3em;
+    font-weight: bold;
+    margin: 35% 0;
+}
+span#chk{
+    display:none;
+}
+.resp{
+    width: 35%;
+    height:20%;
+    margin: 10px 0;
+    font-size: 1.5em;
+    display: inline-block;
+    text-align: center;
+}

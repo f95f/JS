@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aolar III</title>
+    <style>
+    body{
+            padding: 10%;
+            background-color: rgb(241, 199, 199);
+            color:rgb(199, 180, 127);
+            /* color:rgb(196, 97, 97); */
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        div{
+            background-color: #222;
+            background-image:linear-gradient(to right, #444, #222);
+            padding: 1%;
+            width: 200px;
+            border-radius: 200px;
+            margin: auto;
+            box-shadow: 2px 2px 8px #222222AA, inset 5px 0 8px #111, inset -5px 0 8px #444;
+        }
+        div:hover{
+            color: #866de0;
+        }
+        span{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome = window.prompt("Insira seu número:");
+        var teste = nome % 2 == 0 ? "Par" : "Ímpar";
+        document.write(`<div>Olá Peter. O número é <span>${teste}</span>.</div>`);
+    </script>
+</body>
+</html>

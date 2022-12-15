@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{margin:0;}
+        body{
+            width: 100%;
+            padding: 20px;
+            background-color: rgb(179, 136, 172);
+
+        }
+        main{   
+            width: 60%;
+            margin:auto;
+            border-radius:15px;
+            background-color: #422;
+            color: #faa;
+            box-shadow: 4px 4px 4px #211;
+            text-shadow: 2px 2px 2px #211;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 5%;
+        }
+        hr{
+            color:#faa;
+            margin: 10px 0;
+        }
+
+    </style>
+    <title>Ex.01 - sla</title>
+</head>
+    <main>
+        <body>
+            <h1>Controle de Nacionalidade</h1><hr>
+            <span>Informe seu país: </span>
+            <input type="text" name="country" id="country" />
+            <input type="button" id="bot" value="Aperte" onclick="a()">
+            <div id="nac"></div>
+            <script>
+                window.alert(Math.random());
+                function a(){
+                    var pais = window.document.getElementById("country");
+                    var p = pais.value;
+                    var res = window.document.getElementById("nac");
+                    if(p == "Brasil" || p == "brasil"){
+                        res.innerText = "Você é brasileiro!";
+                    }
+                    else{
+                        res.innerText = `Você é de ${p}`;
+                    }
+                }
+            </script>
+        </body>
+    </main>
+</html>

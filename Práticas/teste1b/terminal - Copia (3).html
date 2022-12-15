@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<head>
+<title>a</title>
+<style> 
+	body{
+		padding: 0;
+		background-color: #eee;
+	}
+	#main{
+		padding: 20px;
+		background-color: #ddd;
+		width: 600px;
+		margin:auto;
+		margin-top: 10%;
+		border-radius: 5px;
+		font-family: verdana;
+		box-shadow: 4px 4px 15px #22222266;
+		border: 1px solid #888;
+		outline: 5px solid #ddd;
+	}
+	#incluir{
+		width: 405px;
+		margin: auto;
+	}
+	#incluirButton{
+		width: 160px;
+		height: 28px;
+		float: right;
+		margin: auto;
+		margin-top: 5px;
+		box-shadow: 2px 2px 4px #22333333;
+	}
+	#incluirButton:active{
+		box-shadow: none;
+		transition: box-shadow .2s;
+	}
+	input{
+		width: 400px;
+		height: 22px;
+		margin: 5px 0;
+		outline: none;
+		border: 1px solid #888;
+		background-color: #eee;
+		box-shadow: inset 1px 1px 4px #22333333;
+		transition: box-shadow .2s;
+	}
+	#valor{
+		width: 60px;
+	}
+	input:focus{
+		box-shadow: none;
+	}
+	table{
+		padding: 5px;
+		margin: auto;
+		background-color:#ccc;
+		box-shadow: 2px 2px 5px #44333333;
+		border: 1px solid #888;
+	}
+	td, th{
+		padding: 5px 12px;
+		background-color: #eee;
+	}
+	th{
+		background-color: #bbb;
+		color: #333;
+	}
+	#warn{
+		color: red;
+		text-align: center;
+		display: none;
+	}
+	.exc{
+		background-color: #bbb;
+		color: #eee;
+	}
+	#1:mouseover{
+		background-color: yellow;
+	}
+</style>
+</head>
+<body id = "d" onload = "greet();">
+<h1 id = "h" style = "font-size: 5em; text-align: center;" onclick = "ev1();">
+</h1>
+<div id = "main">
+<section id = "incluir">
+
+		<label for = "nome">Produto: </label> <br/>
+		<input type = "text" id = "nome"> <br/>
+		<label for = "forn">Fornecedor:</label> <br/>
+		<input type = "text" id = "forn"><br/>
+		<label for = "valor">Preço:</label>
+		<input type = "number" id = "valor">
+
+	<input type = "button" id = "incluirButton" value = "Incluir" onclick = "incluir();"><br />
+	<p id = "warn"></p>
+	
+	<hr/>
+</section>
+<table id = "tabela">
+	<tr>
+		<th>Código</th>
+		<th>Nome</th>
+		<th>Fornecedor</th>
+		<th>Valor</th>
+	</tr>
+	<tr>
+		<td id = "l1c1"></td>
+		<td id = "l1c2"></td>
+		<td id = "l1c3"></td>
+		<td id = "l1c4"></td>
+		<td id = "l1c5"></td>
+	</tr>
+	
+</table>
+</div>
+<script>
+	let id = 1;
+	let incluir = function(){
+		let prodNome = document.getElementById("nome").value;
+		let prodForn = document.getElementById("forn").value;
+		let prodVal = document.getElementById("valor").value;
+
+		let warn = document.getElementById("warn");
+
+		if((prodNome == 0) || (prodForn == 0) || (prodVal == 0)){
+			//alert("a");
+			warn.style.display = "inline";
+			warn.innerText = "Informe todos os campos!";
+		}
+		else{
+			let prodG = document.createElement("tr");
+			let prodGc = [];
+
+			for(let i = 0; i < 5; i++){
+				let j = document.createElement("td");
+				prodGc[i] = j;
+				prodG.appendChild(prodGc[i]);
+			}	
+			prodGc[0].innerText = Math.floor(Math.random() * 100000);
+			prodGc[1].innerText = prodNome;
+			prodGc[2].innerText = prodForn;
+			prodGc[3].innerText = `R$ ${prodVal}`;
+			prodGc[4].innerText = "X";
+			prodGc[4].setAttribute("class", "exc");
+			prodGc[4].setAttribute("id", `${id}`);	
+			id++;	
+	
+			let tab = document.getElementById("tabela");
+			tab.appendChild(prodG);
+			
+			document.getElementById("nome").value = "";
+			document.getElementById("forn").value = "";
+			document.getElementById("valor").value = "";
+			warn.innerText = "";
+		}
+	}
+	let greet = function(){
+		let prod1 = [];
+		for(let i = 0; i < 5; i++){
+			prod1[i] = document.getElementById(`l1c${i + 1}`);
+		}
+		prod1[0].innerText = Math.floor(Math.random() * 100000);
+		prod1[1].innerText = "Pipoca";
+		prod1[2].innerText = "Fritop";
+		prod1[3].innerText = "R$ 152,40";
+		prod1[4].innerText = "X";
+		
+		let prod2 = document.createElement("tr");
+		let prod2c = [];
+
+		for(let i = 0; i < 5; i++){
+			let j = document.createElement("td");
+			prod2c[i] = j;
+			prod2.appendChild(prod2c[i]);
+		}	
+		prod2c[0].innerText = Math.floor(Math.random() * 100000);
+		prod2c[1].innerText = "Biscoito";
+		prod2c[2].innerText = "Maria";
+		prod2c[3].innerText = "R$ 82,40";
+		prod2c[4].innerText = "X";
+		
+		let tab = document.getElementById("tabela");
+		tab.appendChild(prod2);
+
+		let prod3 = document.createElement("tr");
+		let prod3c = [];
+
+		for(let i = 0; i < 5; i++){
+			let j = document.createElement("td");
+			prod3c[i] = j;
+			prod3.appendChild(prod3c[i]);
+		}	
+		prod3c[0].innerText = Math.floor(Math.random() * 100000);
+		prod3c[1].innerText = "Salgadinho";
+		prod3c[2].innerText = "Fritop";
+		prod3c[3].innerText = "R$ 25,48";
+		prod3c[4].innerText = "X";
+		
+		tab.appendChild(prod3);
+	}
+</script>
+</body>
+</html>

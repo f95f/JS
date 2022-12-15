@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Produto</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div id = "main">
+        <input type="button" id = "logOut" class = "button" value = "Sair" onclick = "logOut();">
+        <section id = "container_cadastro">
+        <h1>Cadastrar novo item</h1>
+        <label for="prodName">Nome do Produto</label><br>
+        <input type="text" id = "prodNome"><br>
+        <label for="prodVal">Valor do Produto</label><br>
+        <input type="number" id = "prodVal"><br>
+        <label for="prodForn">Fornecedor</label><br>
+        <input type="text" id = "prodForn"><br>
+
+        <input type="button" value = "Cadastrar" class = "button" onclick = "cadastrar();">
+        </section>
+        <section id = "container_tabela">
+            <table>
+                <tr>
+                    <th colspan = 4>Produtos Cadastrados</th>
+                </tr>
+                <tr>
+                    <th>Código</th>
+                    <th>Descrição do Produto</th>
+                    <th>Valor</th>
+                    <th>Fornecedor</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+        </section>
+    </div>
+    <script src = "scriptCadastro.js"></script>
+</body>
+</html>

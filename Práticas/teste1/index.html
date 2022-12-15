@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja Bem-Vindo!</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div id = "main">
+        <h1>Identifique-se:</h1>
+        
+        <input type="text" id = "userLogin" value = "Usuário" onfocus="toogleText('in, user');" onblur="toogleText('out, user');"><br>
+        <input type="text" id = "userPass" value = "Senha" onfocus="toogleText('in, pass');" onblur = "toogleText('out, pass');"><br>
+        <p id = "alerta"></p> <br>
+        <input type="button" id = "verificar" onclick = "verificar();" value = "Entrar"><br>
+
+        
+
+    </div>
+
+    <script src = "scriptLogin.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+ <html lang = "pt-br">
+ <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ex 15</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+ </head>
+ <body>
+    <header><h1> Atividade </h1></header>
+    <main>
+        <div> 
+            <label for = "valor">Número (entre 0 e 100): </label>
+            <input type="number" id="valor">
+            <input type="submit" class = "bot" id="inserir" value = "Inserir" onclick = "add()"><br />
+            <select id="added" size="10">
+                <option id = "def">Informe um valor acima...</option>
+            </select>
+            <p id = "alerta"> </p>
+<br />
+            <input type="submit" class = "bot" id="finalizar" onclick = "end()">
+            <div id = "container" class = "resCont">
+                    <div class = "resCont" id = "resultado">
+                        <p> Valores: </p>
+                    </div>
+                    <div class = "resCont" id = "info">
+                        <p></p> Resultados: </p>
+                    </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <span>&copy; lorem ipsum - 2021</span>
+    </footer>
+
+ </body>
+ </html>

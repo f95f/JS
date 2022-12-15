@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia</title>
+    <style>
+        body{
+            background-color: #383835;
+            color:rgb(162, 211, 216);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 2em;
+            text-shadow: 8px 8px 16px rgba(86, 148, 148, 0.4);
+            text-align: center;
+            padding: 50px 0;
+        }</style>
+</head>
+<body>
+    <p></p>
+    <script>
+        var agora = new Date();
+        var dia = agora.getDay();
+        var text = window.document.getElementsByTagName('p')[0];
+        var diaNome;
+        switch(dia){
+            case 0:
+                diaNome = "Domingo";
+                break
+            case 1:
+                diaNome = "Segunda";
+                break
+            case 2:
+                diaNome = "Terça";
+                break
+            case 3:
+                diaNome = "Quarta";
+                break
+            case 4:
+                diaNome = "Quinta";
+                break
+            case 5:
+                diaNome = "Sexta";
+                 break
+            case 6:
+                diaNome = "Sábado";
+                break
+            default:
+                text.innerText = "Que?kk";
+        }
+        if(diaNome != null){
+            text.innerText = `Feliz ${diaNome}!`;
+        }
+    </script>
+</body>
+</html>

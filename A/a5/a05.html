@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            color: azure;
+            background-color: #223;
+            height: 695px;
+            text-shadow: 1px 1px 4px #222;; 
+        }
+        #ret{
+            background-color: brown;
+            width: 200px;            
+            margin: 20px;
+            padding: 50px;
+            border-radius: 5px;
+
+            box-shadow: 2px 2px 8px #112;
+        }
+        #ret2{
+            background-color: rgb(16, 63, 107);
+            width: 200px;            
+            margin: 20px;
+            padding: 50px;
+            border-radius: 5px;
+
+            box-shadow: 2px 2px 8px #112;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id = ret onclick="cliclar()" onmouseenter="entrar()" onmouseout="sair()">
+            <p>&lt;div&gt;</p>
+        </div>
+        <div id = ret2 >
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit?</p>
+        </div>
+        <script>
+            var a = window.document.getElementById('ret');
+            var b = window.document.getElementById('ret2');
+            
+            b.addEventListener('click', cliclar2);
+            b.addEventListener('mouseenter', entrar2);
+            b.addEventListener('mouseout', sair2);
+
+            function cliclar(){
+               // var retang = window.document.getElementById('ret');
+                a.innerText = "opa kk";
+            }
+            function entrar(){
+               // var ent = window.document.getElementById('ret');
+                a.style = "background-color: #caa";
+            }
+            function sair(){
+                a.innerHTML = "&lt;div&gt;";
+                a.style = "background-color = brown";
+            }
+            function cliclar2(){
+               // var retang = window.document.getElementById('ret');
+                b.innerText = "opa kk";
+            }
+            function entrar2(){
+               // var ent = window.document.getElementById('ret');
+                b.style = "background-color: #aac";
+            }
+            function sair2(){
+                b.innerHTML = "Lorem ipsum, dolor sit amet consectetur adipisicing elit?";
+                b.style = "background-color = rgb(16, 63, 107)";
+            }
+        </script>
+    </main>
+</body>
+</html>

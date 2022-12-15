@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="pt-br">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Treino de Cálculo Mental v1.0</title>
+</head>
+<body onload="drawNumbers()">
+    <main>
+        <header>
+            <span class = "info"><em>nº da questão</em></span>  |
+            <span class = "info"><em>pontuação</em></span>  |
+            <span class = "info"><em>dificuldade</em></span>
+        </header>
+        <section id = "startButton">
+            <!--esta sessão encobre o jogo até jogador clicar-->
+            <p>Start!</p>
+        </section>
+        <section><br>
+            <p><em>responda corretamente!</em></p><br>
+            <span id = "conta">
+                <span id = "term1"> </span> X <span id = "term2"> </span> = ?
+            </span><br>
+            <input type="number" name="resp" id="resp" class="resp" value="0">
+            <input type="button" name="bot" id="bot" class="resp" value=" Responder" onclick="calcular()"> <br><br>
+            <span id="chk"><em></em></span><!--deve aparecer correto/incorreto ao responder--><br>
+        </section>
+        <footer>
+            <!--colocar "buttons"-->
+            <em>Encerrar</em> | <em>Resetar</em> | <em>Pular</em>
+            <!--"pular" vira "Próximo" ao responder--> 
+        </footer>
+        <script src="script.js"></script>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="600">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício I</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        body{
+            margin: 0px;
+            background-image: linear-gradient(to bottom, #D9BD89,#D9A74A);
+        }
+        main{
+            margin: auto;
+            width: 100%;
+            height: 684px;
+        }
+        header{
+            font-size: 2em;
+        }
+        h1{
+            font-family: 'Pacifico', cursive;
+            margin: 10px;  
+        }
+        h1, footer > span > p{
+            color: white;
+            text-shadow: 1px 1px 8px rgba(34, 28, 14, 0.425);
+            text-align: center;
+        }
+        section{
+            width: 500px;
+            height: 480px;
+            margin: auto;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 6px 6px 15px rgba(34, 28, 14, 0.425);
+        }
+        p{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        div{
+            color: rgba(34, 28, 14, 0.425);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 12px 10px;
+        }
+        .textBoxes{
+            border: none;
+            border-right: 3px solid #D9BD89;
+            width: 75px;
+            margin: 0 1%;
+            text-align: center;
+            color: #D9A74A;
+        }
+        .textBoxes:active, .textBoxes:focus{
+            background-color: #D9BD89;
+            color: white;
+            outline: none;
+        }
+        #info > span{
+            display: inline;
+            width: 100px;
+            padding: 0px;
+            
+            margin: 0 2%;
+            text-align: center;
+        }
+        #ini:hover, #fim:hover, #pas:hover{
+            color: black
+        }
+        #counter{
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            background-color: #D9BD89;
+        }
+        #bot{
+            display: inline-block;
+            font-size: 1.1em;
+            width: 100px;
+            border: 3px solid #D9BD89;
+            border-top: none;
+            border-bottom: none;
+            color:rgba(34, 28, 14, 0.425);
+            background-color: white
+        }
+        #bot:hover{
+            color: white;
+            background-color: #D9BD89;
+        }
+        #bot:active{
+            background-color: #b39a6d;
+        }
+        #result{
+            border: 1px solid #D9BD89;
+            height: 220px;
+            padding: 2%;
+            margin: 0;
+            margin-top: 4%;
+            overflow: scroll;
+        }
+        footer > span > p{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body onload = "carregar()">
+<main>
+        <header>
+            <h1 id = "greet"></h1>
+        </header>
+        <section>
+            <p>Informe os parâmetros corretamente:</p>
+            <div id = "info">
+                <span id = "ini">Início: 
+                <input type="number"class="textBoxes" value=0></span>
+                <span id = "fim">Fim:
+                <input type="number"class="textBoxes" value=0></span>
+                <span id = "pas">Passo: 
+                <input type="number"class="textBoxes" value=0></span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptate eaque quam dolores voluptatem autem tempore. Optio odio nam id molestias minus, at consequatur modi, error quae adipisci. <br> Necessitatibus Nostrum.</p>
+            <div id = "counter">
+                <input type="button" id="bot" name="bot" value="Contar" onclick="contar()">
+            </div>
+            <div id = "result">
+                <span id = "h"></span>
+            </div>
+        </section>
+        <footer>
+            <span><p>&copy; lorem ipsum - 2021</p></span>
+        </footer>
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A09 - Repetições</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{
+            background-color: #efefef;
+        }
+        main{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 60%; 
+            border: 2px solid #00000033;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 20px auto;
+            box-shadow: 3px 3px 20px #00000033;
+            background-color: white;
+        }    
+        header{
+            margin: 10px 0;
+            text-align: center;
+        }
+        input{
+            width: 80px;
+            height: 40px;
+            margin: 0 2px;
+            padding: 5px;
+            background-color: #00000033;
+            border: none;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        input:active, input:focus{
+            border: none;
+            background-color: #333;
+            outline: none;   
+        }
+        #bot{
+            outline: 5px solid #00000033;
+        }
+        #bot:active, #bot:focus{
+            outline: 5px solid #333;
+        }
+        p{
+            text-shadow: 2px 2px 6px #00000033;
+            text-align: center;
+            color: #333;
+        }
+        hr{
+            margin: 8px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <input type="number" id = "texto" name = "texto" value = "valor">
+            <input type="button" id = "bot" name= "bot" value= "Vai!" onclick="ir()">
+        </header>
+        <div>
+
+        </div>
+    </main>
+    <script>
+        function ir(){
+            var t = window.document.getElementById("texto");
+            var valor = Number(t.value);
+            var contador = 1;
+            var paragraph;
+
+            while(contador <= valor){
+                paragraph = window.document.createElement("p");
+                paragraph.innerHTML = `[ ${contador} ] - Lorem ipsum dolor sit amet consectetur adipisicing elit. <hr>`;
+                window.document.getElementsByTagName("div")[0].appendChild(paragraph);
+                contador++;
+            }
+        }
+    </script>
+</body>
+</html>
