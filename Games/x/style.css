@@ -20,7 +20,7 @@
 }
 body{
     background-color: var(--L1);
-    padding: 15%;
+    padding: 5%;
 }
 main{
 	display: grid;
