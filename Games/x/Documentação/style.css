@@ -1,0 +1,26 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+form{
+	margin: auto;
+}
+main{
+	display: grid;
+}
+input.num{
+	text-align: center;
+	font-size: 2em;
+	height: 60px;
+	width: 60px;
+	background-color: #eee;
+	color: #555;
+	margin: 20px;
+	border: 1px solid #ddd;
+	box-shadow: 2px 2px 18px #33333311;
+	transition: all .5s;
+}
+input.num:hover{
+	background-color: #fff;
+	box-shadow: none;
+}

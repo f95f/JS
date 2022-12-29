@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>♦♣♠♥</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload = "iniciar()">
+    <main>
+
+        <span> Acertos: 
+            <span id = "pont">0</span>
+        </span> 
+
+        <span> Pergunta # 
+            <span id = "ind">1</span>
+            - Nível: <span id = "nivel"></span>
+        </span>
+        <br/>
+
+        <form action = "">
+
+            <input type = "text" id = "v1" disabled>
+            <span>X</span>
+            <input type = "text" id = "v2" disabled><br/>
+            <input type = "number" id = "resp" onfocus = "this.value = ''" value = "0">
+            <input type = "button" onclick = "verificar()" id = "prox" value = "Verificar">
+
+        </form>
+
+        <span id = "info"></span>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
