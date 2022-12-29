@@ -1,0 +1,57 @@
+:root{
+   --L1: #eff2f9;
+   --L2: #e4ebf1;
+   --M1: #b5c0c6;
+   --D1: #6e808e;
+   --D2: #29354f;
+
+   --ACC: #fffffb;
+   --SHD: #4747473f; 
+}
+
+@font-face {
+    font-family: Myr;
+    src: url("Fontes/Myriad/Myriad Pro Regular.ttf");
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+    background-color: var(--L1);
+    padding: 15%;
+}
+main{
+	display: grid;
+    align-items: center;
+    border: 1px solid lime;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+}
+div#valores{
+    height: 100px;
+    margin: 20px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 3px 3px 8px var(--SHD), -3px -3px 8px var(--ACC);
+}
+form{
+    margin: auto;
+    border: 1px solid lime;
+    color: var(--M1);
+    font-family: Myr, Arial, sans-serif;
+}
+
+input.num{
+	font-size: 2.4em;
+	height: 60px;
+	width: 60px;
+	background-color: var(--L1);
+    color: var(--D2);
+	margin: 20px 8px;
+	border: none;
+    text-shadow: 2px 2px 4px var(--SHD);
+}
+input#v1{   text-align: right;}
