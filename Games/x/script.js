@@ -12,7 +12,7 @@ let diff = 1;
 let valePontos = 0;
 
 let iniciar = function(){
-    trocar();
+    trocar();   
 }
 
 let verificar = function(){
@@ -25,9 +25,9 @@ let verificar = function(){
        score += valePontos;
        diff += .1;
        pont.innerText = score;
-       info.innerText = "Correto";	
+       info.innerText = "Correto.";	
     }
-    else{ info.innerText = "Incorreto"; }
+    else{ info.innerText = "Incorreto."; }
 
     resp.value = 0;
     trocar();

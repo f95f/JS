@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>♦♣♠♥</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload = "iniciar()">
     <main>
+        <div id = "header">
+            <div id = "acertos" class = "head">
+                Acertos <br/>
+                <span id = "pont">0</span>
+            </div>
+            
+            <div id = "pergunta" class = "head">
+                Nível <br/> 
+                <span id = "ind">1</span>
+            </div>   
+        </div>
 
-        <span> Acertos: 
-            <span id = "pont">0</span>
-        </span> 
-
-        <span> Pergunta # 
-            <span id = "ind">1</span>
-            - Nível: <span id = "nivel"></span>
-        </span>
-        <br/>
+        <span id = "nivel"></span>
 
         <form action = "">
             <div id = "valores">
@@ -27,7 +31,7 @@
                 <input type = "text" id = "v2" class = "num" disabled>
             </div>
             <input type = "number" id = "resp" onfocus = "this.value = ''" value = "0">
-            <input type = "button" onclick = "verificar()" id = "prox" value = "Verificar">
+            <input type = "button" onclick = "verificar()" id = "prox" value = ">">
 
         </form>
 

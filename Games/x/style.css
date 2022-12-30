@@ -7,11 +7,7 @@
 
    --ACC: #fffffb;
    --SHD: #4747473f; 
-}
-
-@font-face {
-    font-family: Myr;
-    src: url("Fontes/Myriad/Myriad Pro Regular.ttf");
+   --DES: rgb(109, 206, 245);
 }
 
 *{
@@ -25,33 +21,118 @@ body{
 main{
 	display: grid;
     align-items: center;
-    border: 1px solid lime;
-    max-width: 400px;
+    max-width: 300px;
     margin: auto;
     padding: 20px;
 }
+
+div#header{
+    width: 100%;
+    color: var(--M1);  
+}
+
+div.head{
+    display: inline-block;
+    margin: 5px 30px;
+    text-align: center;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+span#pont, span#ind{
+    line-height: 40px;
+    font-size: 1.6em;
+    color: var(--D2);
+    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+}
+div#pergunta{
+    float: right;
+}
+
 div#valores{
     height: 100px;
-    margin: 20px;
+    width: 240px;
+    margin: 0 20px;
     border-radius: 50px;
     text-align: center;
-    box-shadow: 3px 3px 8px var(--SHD), -3px -3px 8px var(--ACC);
+    box-shadow: 3px 3px 8px var(--SHD),
+                -3px -3px 8px var(--ACC),
+                inset 1px 1px 3px var(--ACC),
+                inset -1px -1px 2px var(--SHD);
 }
 form{
     margin: auto;
-    border: 1px solid lime;
     color: var(--M1);
-    font-family: Myr, Arial, sans-serif;
+    font-family: 'Comfortaas', Arial, Helvetica, sans-serif;
 }
 
 input.num{
-	font-size: 2.4em;
+	font-size: 2.8em;
 	height: 60px;
 	width: 60px;
 	background-color: var(--L1);
     color: var(--D2);
+    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
 	margin: 20px 8px;
 	border: none;
     text-shadow: 2px 2px 4px var(--SHD);
 }
 input#v1{   text-align: right;}
+
+input#resp{
+    width: 170px;
+    height: 40px;
+    margin: 30px 20px;
+    padding-right: 10px;
+
+    border-radius: 20px;
+    border: none;
+    background-color: var(--L1);
+    text-align: right;
+    box-shadow: inset 3px 3px 6px var(--SHD),
+                inset -3px -3px 6px var(--ACC),
+                1px 1px 3px var(--ACC),
+                -1px -1px 3px var(--SHD);
+    color: var(--M1);
+    transition: box-shadow .3s;
+}
+
+input#resp:hover{
+    box-shadow: inset 1px 1px 3px var(--SHD),
+                inset -1px -1px 3px var(--ACC);
+}
+
+input#resp:focus{
+    outline: 1px solid var(--DES);
+}
+
+input#prox{
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+
+    border-radius: 100%;
+    border: none;
+    box-shadow: 3px 3px 8px var(--SHD),
+                -3px -3px 8px var(--ACC),
+                inset 1px 1px 3px var(--ACC),
+                inset -1px -1px 2px var(--SHD);
+
+    background-color: var(--L1);
+    color: var(--M1);
+    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    transition: box-shadow .5s;
+}
+
+input#prox:hover{
+    box-shadow: 1px 1px 3px var(--SHD),
+                -1px -1px 3px var(--ACC);
+    cursor: pointer;
+}
+
+span#nivel{  margin-bottom: 12px; }
+
+span#info, span#nivel{  
+    text-align: center;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: var(--M1);  
+}
