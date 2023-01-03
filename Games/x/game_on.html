@@ -13,29 +13,32 @@
         <div id = "header">
             <div id = "acertos" class = "head">
                 Acertos <br/>
-                <span id = "pont">0</span>
+                <span id = "score">0</span>
             </div>
             
-            <div id = "pergunta" class = "head">
+            <div id = "nivel" class = "head">
                 Nível <br/> 
-                <span id = "ind">1</span>
+                <span id = "index">1</span>
             </div>   
+            <div id = "timebar">
+                <div id = "liquid"></div>
+            </div>
         </div>
 
-        <span id = "nivel"></span>
+        <span id = "dificuldade"></span>
 
         <form action = "">
             <div id = "valores">
-                <input type = "text" id = "v1" class = "num" disabled>
+                <input type = "text" id = "txt_v1" class = "txt_valores" disabled>
                 <span>X</span>
-                <input type = "text" id = "v2" class = "num" disabled>
+                <input type = "text" id = "txt_v2" class = "txt_valores" disabled>
             </div>
-            <input type = "number" id = "resp" onfocus = "this.value = ''" value = "0">
-            <input type = "button" onclick = "verificar()" id = "prox" value = ">">
+            <input type = "number" id = "txt_resp" onfocus = "this.value = ''" value = "0">
+            <input type = "button" onclick = "verificar()" id = "btn_verificar" value = ">">
 
         </form>
 
-        <span id = "info"></span>
+        <span id = "footer"></span>
     </main>
     <script src="script.js"></script>
 </body>

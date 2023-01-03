@@ -6,7 +6,7 @@
    --D2: #29354f;
 
    --ACC: #fffffb;
-   --SHD: #4747473f; 
+   --SHD: #3636363f; 
    --DES: rgb(109, 206, 245);
 }
 
@@ -18,6 +18,7 @@ body{
     background-color: var(--L1);
     padding: 5%;
 }
+
 main{
 	display: grid;
     align-items: center;
@@ -37,13 +38,32 @@ div.head{
     text-align: center;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
-span#pont, span#ind{
+div.head span{
     line-height: 40px;
     font-size: 1.6em;
-    color: var(--D2);
+    color: var(--D1);
     font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
 }
-div#pergunta{
+
+div#timebar{
+    width: 202px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 1px;
+    height: 6px;
+    box-shadow: 3px 3px 8px var(--SHD);
+    border-radius: 6px;
+}
+
+div#liquid{
+    width: 200px;
+    margin: 1px;
+    height: 4px;
+    background: linear-gradient(to right, var(--D1), var(--DES));
+    border-radius: 5px;
+}
+div#nivel{
     float: right;
 }
 
@@ -64,7 +84,7 @@ form{
     font-family: 'Comfortaas', Arial, Helvetica, sans-serif;
 }
 
-input.num{
+input.txt_valores{
 	font-size: 2.8em;
 	height: 60px;
 	width: 60px;
@@ -75,9 +95,9 @@ input.num{
 	border: none;
     text-shadow: 2px 2px 4px var(--SHD);
 }
-input#v1{   text-align: right;}
+input#txt_v1{   text-align: right;}
 
-input#resp{
+input#txt_resp{
     width: 170px;
     height: 40px;
     margin: 30px 20px;
@@ -95,16 +115,16 @@ input#resp{
     transition: box-shadow .3s;
 }
 
-input#resp:hover{
+input#txt_resp:hover{
     box-shadow: inset 1px 1px 3px var(--SHD),
                 inset -1px -1px 3px var(--ACC);
 }
 
-input#resp:focus{
+input#txt_resp:focus{
     outline: 1px solid var(--DES);
 }
 
-input#prox{
+input#btn_verificar{
     width: 40px;
     height: 40px;
     margin-right: 20px;
@@ -123,15 +143,15 @@ input#prox{
     transition: box-shadow .5s;
 }
 
-input#prox:hover{
+input#btn_verificar:hover{
     box-shadow: 1px 1px 3px var(--SHD),
                 -1px -1px 3px var(--ACC);
     cursor: pointer;
 }
 
-span#nivel{  margin-bottom: 12px; }
+span#dificuldade{  margin-bottom: 12px; }
 
-span#info, span#nivel{  
+span#footer, span#dificuldade{  
     text-align: center;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     color: var(--M1);  

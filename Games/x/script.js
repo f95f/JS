@@ -1,42 +1,82 @@
-let v1 = document.getElementById("v1");
-let v2 = document.getElementById("v2");
-let resp = document.getElementById("resp");
-let pont = document.getElementById("pont"); 
-let info = document.getElementById("info");
-let ind = document.getElementById("ind");
-let nivel = document.getElementById("nivel");
+// getting relevant DOM elements 
+
+let v1 = document.getElementById("txt_v1");
+let v2 = document.getElementById("txt_v2");
+let d_resp = document.getElementById("txt_resp");
+let d_pontos = document.getElementById("score"); 
+let d_index = document.getElementById("index");
+let info = document.getElementById("footer");
+let nivel = document.getElementById("dificuldade");
+let d_liquid = document.getElementById("liquid");
+
+let vidas = 3;
+let tempo = 50;
+let liquid_size = 200;
 let index = 1;
+let diff = 1; //dificuldade
 let resultado = 0;
 let score = 0;
-let diff = 1;
-let valePontos = 0;
+let valePontos = 0; //multiplicador de pontos
 
 let iniciar = function(){
-    trocar();   
+    gerarConta();   
+    setInterval("temporizar()", tempo);
+}
+
+let gerarConta = function(){
+    v1.value = Math.floor(Math.random() * (10 * Math.floor(diff)) + 2);
+    v2.value = Math.floor(Math.random() * (10 * Math.floor(diff)) + 2); 
+    setDiff();
+}
+
+let temporizar = function(){
+
+    liquid_size--;
+    d_liquid.style.width = liquid_size + "px";
+    
+    if(liquid_size < 1){
+        reduzVida();
+        restore_liquid_size();
+        gerarConta();
+    }
+
+}
+let restore_liquid_size = function(){
+    liquid_size = 200;
 }
 
 let verificar = function(){
 
     resultado = v1.value * v2.value;
-    index++;
-    ind.innerText = index;
 
-    if(resp.value == resultado){
+    if(Number(d_resp.value) == resultado){
        score += valePontos;
        diff += .1;
-       pont.innerText = score;
+       index++;
+       d_index.innerText = index;
+       d_pontos.innerText = score;
        info.innerText = "Correto.";	
     }
-    else{ info.innerText = "Incorreto."; }
-
-    resp.value = 0;
-    trocar();
+    else{ 
+        info.innerText = "Incorreto.";
+        reduzVida();
+    }
+    
+    restore_liquid_size();
+    d_resp.value = 0;
+    gerarConta();
 }
 
-let trocar = function(){
-    v1.value = Math.floor(Math.random() * (10 * Math.floor(diff)) + 2);
-    v2.value = Math.floor(Math.random() * (10 * Math.floor(diff)) + 2); 
-    setDiff();
+let reduzVida = function(){
+
+    vidas--;
+    if(vidas == 0){endGame();}
+} 
+
+let endGame = function(){
+
+    alert("Game Over");
+    //go to results page
 }
 
 let setDiff = function(){
