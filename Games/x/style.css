@@ -51,17 +51,18 @@ div#timebar{
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 1px;
-    height: 6px;
+    height: 3px;
     box-shadow: 3px 3px 8px var(--SHD);
-    border-radius: 6px;
+    border-radius: 3px;
 }
 
 div#liquid{
     width: 200px;
-    margin: 1px;
-    height: 4px;
+    height: 3px;
+    
     background: linear-gradient(to right, var(--D1), var(--DES));
-    border-radius: 5px;
+    background: linear-gradient(to right, rgb(216, 49, 19), rgb(230, 127, 59));
+    border-radius: 3px;
 }
 div#nivel{
     float: right;
