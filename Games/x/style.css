@@ -68,6 +68,35 @@ div#nivel{
     float: right;
 }
 
+div#lifebar{
+    width: 202px;
+    margin: auto;
+    padding: 5px;
+    height: 20px;
+
+    border-radius: 15px;     
+    box-shadow:
+         3px 3px 8px var(--SHD),
+         -3px -3px 8px var(--ACC),
+        inset 1px 1px 1px var(--ACC),
+        inset -1px -1px 1px var(--SHD);
+}
+    
+div.vida, div.vidaVazio{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 2px;
+    
+    border-radius: 100%;
+    background-color:  rgb(216, 49, 19);
+    box-shadow: 2px 2px 3px var(--SHD);
+}
+div.vidaVazio{
+    background-color: var(--L1);
+    box-shadow: inset 2px 2px 3px var(--SHD);
+    
+}
 div#valores{
     height: 100px;
     width: 240px;

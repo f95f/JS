@@ -8,8 +8,9 @@ let d_index = document.getElementById("index");
 let info = document.getElementById("footer");
 let nivel = document.getElementById("dificuldade");
 let d_liquid = document.getElementById("liquid");
+let lifebar = document.getElementById("lifebar");
 
-let vidas = 3;
+let vidas = 10;
 let tempo = 50;
 let liquid_size = 200;
 let index = 1;
@@ -20,6 +21,7 @@ let valePontos = 0; //multiplicador de pontos
 
 let iniciar = function(){
     gerarConta();   
+    montarVidas();
     setInterval("temporizar()", tempo);
 }
 
@@ -35,10 +37,11 @@ let temporizar = function(){
     d_liquid.style.width = liquid_size + "px";
     
     if(liquid_size < 1){
-        reduzVida();
-        restore_liquid_size();
-        gerarConta();
-    }
+        //restore_liquid_size();
+        //reduzVida();
+        //gerarConta();
+        verificar();
+    }   
 
 }
 let restore_liquid_size = function(){
@@ -62,14 +65,41 @@ let verificar = function(){
         reduzVida();
     }
     
-    restore_liquid_size();
     d_resp.value = 0;
+
+    restore_liquid_size();
     gerarConta();
+}
+
+let montarVidas = function(){
+    
+    for(let i = 0; i < vidas; i++){
+
+        let d_vida = document.createElement("div");
+        d_vida.setAttribute("class", "vida");
+
+        lifebar.appendChild(d_vida);
+    }
+
+}
+
+let preencherVidas = function(){
+
+    let vidasPreenchidas = document.getElementsByClassName("vida");
+      vidasPreenchidas[vidas].setAttribute("class", "vidaVazio");
+    /*
+    for(let i = vidas -1; i >= 0; i--){
+
+        let d_vida = document.getElementsByClassName("vidaVazio")[i];
+        d_vida.setAttribute("class", "vida");
+
+    }*/
 }
 
 let reduzVida = function(){
 
     vidas--;
+    preencherVidas();
     if(vidas == 0){endGame();}
 } 
 
