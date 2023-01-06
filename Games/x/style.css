@@ -88,6 +88,7 @@ div.vida, div.vidaVazio{
     height: 16px;
     margin: 2px;
     
+    transition: all .1s;
     border-radius: 100%;
     background-color:  rgb(216, 49, 19);
     box-shadow: 2px 2px 3px var(--SHD);

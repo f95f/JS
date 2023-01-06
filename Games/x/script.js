@@ -11,7 +11,7 @@ let d_liquid = document.getElementById("liquid");
 let lifebar = document.getElementById("lifebar");
 
 let vidas = 10;
-let tempo = 50;
+let tempo = 60;
 let liquid_size = 200;
 let index = 1;
 let diff = 1; //dificuldade
@@ -55,6 +55,7 @@ let verificar = function(){
     if(Number(d_resp.value) == resultado){
        score += valePontos;
        diff += .1;
+       tempo += 1;
        index++;
        d_index.innerText = index;
        d_pontos.innerText = score;
@@ -62,6 +63,7 @@ let verificar = function(){
     }
     else{ 
         info.innerText = "Incorreto.";
+        tempo -= 1;
         reduzVida();
     }
     
@@ -87,13 +89,7 @@ let preencherVidas = function(){
 
     let vidasPreenchidas = document.getElementsByClassName("vida");
       vidasPreenchidas[vidas].setAttribute("class", "vidaVazio");
-    /*
-    for(let i = vidas -1; i >= 0; i--){
 
-        let d_vida = document.getElementsByClassName("vidaVazio")[i];
-        d_vida.setAttribute("class", "vida");
-
-    }*/
 }
 
 let reduzVida = function(){
@@ -105,8 +101,11 @@ let reduzVida = function(){
 
 let endGame = function(){
 
-    alert("Game Over");
     //go to results page
+    d_liquid.style.width = 0 + "px";
+    v1.value = "-";
+    v2.value = "-";
+    setTimeout("window.location.replace('results.html')", 500);
 }
 
 let setDiff = function(){
