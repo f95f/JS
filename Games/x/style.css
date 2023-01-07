@@ -180,10 +180,19 @@ input#btn_verificar:hover{
     cursor: pointer;
 }
 
-span#dificuldade{  margin-bottom: 12px; }
+span#dificuldade{  
+    margin-bottom: 12px; 
+    color: var(--M1);  
+}
 
 span#footer, span#dificuldade{  
     text-align: center;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    color: var(--M1);  
+}
+span.correto{
+    color:rgb(32, 214, 108);
+}
+
+span.errado{
+    color:rgb(214, 59, 32);
 }

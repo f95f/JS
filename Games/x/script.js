@@ -9,6 +9,7 @@ let info = document.getElementById("footer");
 let nivel = document.getElementById("dificuldade");
 let d_liquid = document.getElementById("liquid");
 let lifebar = document.getElementById("lifebar");
+let interval = null;
 
 let vidas = 10;
 let tempo = 60;
@@ -22,13 +23,22 @@ let valePontos = 0; //multiplicador de pontos
 let iniciar = function(){
     gerarConta();   
     montarVidas();
-    setInterval("temporizar()", tempo);
+    reset_time_count();
+    //setInterval("temporizar()", tempo);
 }
 
 let gerarConta = function(){
     v1.value = Math.floor(Math.random() * (10 * Math.floor(diff)) + 2);
     v2.value = Math.floor(Math.random() * (10 * Math.floor(diff)) + 2); 
     setDiff();
+}
+
+let reset_time_count = function(){
+
+    liquid_size = 200;
+    clearInterval(interval);
+    interval = setInterval("temporizar()", tempo);
+
 }
 
 let temporizar = function(){
@@ -55,22 +65,30 @@ let verificar = function(){
     if(Number(d_resp.value) == resultado){
        score += valePontos;
        diff += .1;
-       tempo += 1;
+       tempo--;
        index++;
        d_index.innerText = index;
        d_pontos.innerText = score;
        info.innerText = "Correto.";	
+       info.setAttribute("class", "correto");
     }
     else{ 
         info.innerText = "Incorreto.";
-        tempo -= 1;
+        info.setAttribute("class", "errado");
+        tempo += 5; 
         reduzVida();
     }
     
     d_resp.value = 0;
 
-    restore_liquid_size();
+    //restore_liquid_size();
+    reset_time_count();
     gerarConta();
+    focar();
+}
+
+let focar = function(){
+    d_resp.focus();
 }
 
 let montarVidas = function(){
@@ -102,10 +120,11 @@ let reduzVida = function(){
 let endGame = function(){
 
     //go to results page
+    time = 0;
     d_liquid.style.width = 0 + "px";
     v1.value = "-";
     v2.value = "-";
-    setTimeout("window.location.replace('results.html')", 500);
+    window.location.replace('results.html');
 }
 
 let setDiff = function(){
