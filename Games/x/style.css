@@ -196,3 +196,8 @@ span.correto{
 span.errado{
     color:rgb(214, 59, 32);
 }
+span#pontosGanhos{
+    text-align: left;
+    margin-left: -50px; padding: 0;
+    color: var(--DES);
+}

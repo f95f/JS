@@ -8,14 +8,14 @@
     <title>Resultados</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload = "setValores()">
     <header>
         <h1>Fim de Jogo</h1>
         <h2>Confira seus resultados:</h2>
     </header>
     <main>
-        <p>Dificuldade Alcançada: <spanr_diff>*</span></p>
-        <p>Total: <span id = "r_total">0</span></p>
+        <p>Dificuldade Alcançada: <span id = "r_diff">*</span></p>
+        <p>Total: <span id = "r_total">0 questões!</span></p>
         <p>Acertos: <span id = "r_acertos">0</span></p>
         <p>Erros: <span id = "r_erros">0</span></p>
         <p>Pontuação Final: <span id = "r_score">0</span></p>
@@ -24,6 +24,7 @@
     <footer>
         <span id = "r_footer">@ 95C</span>
     </footer>
-    <script src="script.js"></script>
+    
+    <script src="results.js"></script>
 </body>
 </html>
