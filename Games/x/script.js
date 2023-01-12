@@ -14,7 +14,7 @@ let d_pontosGanhos = document.getElementById("pontosGanhos");
 let interval = null;
 
 let vidas = 10;
-let tempo = 60;
+let tempo = 60 *Math.pow(10, 8);
 let liquid_size = 200;
 let index = 1;
 let diff = 1; //dificuldade

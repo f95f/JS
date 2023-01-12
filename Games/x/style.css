@@ -1,13 +1,12 @@
 :root{
-   --L1: #eff2f9;
-   --L2: #e4ebf1;
-   --M1: #b5c0c6;
-   --D1: #6e808e;
-   --D2: #29354f;
+   --L1: #C6B7BE;
+   --M1: #2D2A2B;
+   --M2: #232121;
+   --D1: #1E1C1D;
+   --A1: #56B154;
+   --A2: #FF2525;
 
-   --ACC: #fffffb;
-   --SHD: #3636363f; 
-   --DES: rgb(109, 206, 245);
+   --SHD: #36363644; 
 }
 
 *{
@@ -22,50 +21,48 @@ body{
 main{
 	display: grid;
     align-items: center;
-    max-width: 300px;
+    max-width: 360px;
     margin: auto;
-    padding: 20px;
-}
-
-div#header{
-    width: 100%;
-    color: var(--M1);  
+    border: 1px solid red;
 }
 
 div.head{
     display: inline-block;
-    margin: 5px 30px;
+    margin: 0; 
+    height: 70px;
     text-align: center;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
-div.head span{
-    line-height: 40px;
-    font-size: 1.6em;
-    color: var(--D1);
+div#header{
+    width: 100%; 
+}
+div#acertos{
+    padding: 10px 0;
+    width: 120px;
+    outline: 1px solid cyan;
+}
+span#score{
+    text-align: center;
+    margin-right: 50px;
+    font-size: 2em;
     font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+    line-height: 60px;
 }
 
-div#timebar{
-    width: 202px;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 1px;
-    height: 3px;
-    box-shadow: 3px 3px 8px var(--SHD);
-    border-radius: 3px;
-}
-
-div#liquid{
-    width: 200px;
-    height: 3px;
-    
-    background: linear-gradient(to right, var(--D1), var(--DES));
-    background: linear-gradient(to right, rgb(216, 49, 19), rgb(230, 127, 59));
-    border-radius: 3px;
-}
 div#nivel{
+    text-align: left;
+    width: 240px;
     float: right;
+    padding: 6px 0;
+    outline: 1px solid lime;
+}
+div#nivel span{
+    margin: 20px; 
+    line-height: 40px;
+}
+
+div#nivel span#dificuldade{  
+    margin-left: 0;
 }
 
 div#lifebar{
@@ -73,15 +70,9 @@ div#lifebar{
     margin: auto;
     padding: 5px;
     height: 20px;
-
-    border-radius: 15px;     
-    box-shadow:
-         3px 3px 8px var(--SHD),
-         -3px -3px 8px var(--ACC),
-        inset 1px 1px 1px var(--ACC),
-        inset -1px -1px 1px var(--SHD);
+    text-align: left;
 }
-    
+
 div.vida, div.vidaVazio{
     display: inline-block;
     width: 16px;
@@ -89,15 +80,15 @@ div.vida, div.vidaVazio{
     margin: 2px;
     
     transition: all .1s;
-    border-radius: 100%;
-    background-color:  rgb(216, 49, 19);
-    box-shadow: 2px 2px 3px var(--SHD);
+    background-color: var(--A2);
+    box-shadow: inset 2px 2px 3px var(--SHD);
 }
 div.vidaVazio{
     background-color: var(--L1);
-    box-shadow: inset 2px 2px 3px var(--SHD);
-    
 }
+
+/*------------ Form Central ------------*/
+
 div#valores{
     height: 100px;
     width: 240px;
@@ -174,16 +165,32 @@ input#btn_verificar{
     transition: box-shadow .5s;
 }
 
+div#liquid{
+    width: 200px;
+    height: 3px;
+    
+    background: linear-gradient(to right, var(--D1), var(--DES));
+    background: linear-gradient(to right, rgb(216, 49, 19), rgb(230, 127, 59));
+    border-radius: 3px;
+}
+
+div#timebar{
+    width: 202px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 1px;
+    height: 3px;
+    box-shadow: 3px 3px 8px var(--SHD);
+    border-radius: 3px;
+}
+
 input#btn_verificar:hover{
     box-shadow: 1px 1px 3px var(--SHD),
                 -1px -1px 3px var(--ACC);
     cursor: pointer;
 }
 
-span#dificuldade{  
-    margin-bottom: 12px; 
-    color: var(--M1);  
-}
 
 span#footer, span#dificuldade{  
     text-align: center;
