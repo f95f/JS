@@ -30,7 +30,6 @@ let iniciar = function(){
     gerarConta();   
     montarVidas();
     reset_time_count();
-    //setInterval("temporizar()", tempo);
 }
 
 let gerarConta = function(){
@@ -53,9 +52,6 @@ let temporizar = function(){
     d_liquid.style.width = liquid_size + "px";
     
     if(liquid_size < 1){
-        //restore_liquid_size();
-        //reduzVida();
-        //gerarConta();
         verificar();
     }   
 
@@ -72,8 +68,8 @@ let verificar = function(){
        score += valePontos;
         ganharPontos();
 
-       diff += 1;//.1;
-       tempo -= 2;
+       diff += .1;
+       tempo -= 1;
        index++;
        d_index.innerText = index;
        d_pontos.innerText = score;
@@ -83,7 +79,7 @@ let verificar = function(){
     else{ 
         info.innerText = "Incorreto.";
         info.setAttribute("class", "errado");
-        tempo += 5; 
+        tempo += 3; 
         erros++;
         reduzVida();
     }
