@@ -10,19 +10,13 @@ let dificuldade = '';
 let setValores = function(){
 
     r_score.innerText = sessionStorage.getItem("f_score");
-    r_acertos.innerText = sessionStorage.getItem("f_index");
-    r_erros.innerText = sessionStorage.getItem("f_erros");
-    r_total.innerText = Number(sessionStorage.getItem("f_index"))
-    +                   Number(sessionStorage.getItem("f_erros"))
-    +                   " Questões!";
+    r_acertos.innerText = sessionStorage.getItem("f_acertos");
+    r_total.innerText = sessionStorage.getItem("f_total");
    
     for(let i in diffMax){
         if(diffMax[i] == 1){
             dificuldade += '*';
         }
-    }
-    if(diffMax[5] == 1){
-        dificuldade = "!";
     }
     r_diffMax.innerText = dificuldade;
 }

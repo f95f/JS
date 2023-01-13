@@ -13,6 +13,7 @@ let d_pontosGanhos = document.getElementById("pontosGanhos");
 
 let interval = null;
 
+let total = 0; //total de questões mostradas
 let vidas = 10;
 let tempo = 60;// *Math.pow(10, 8);
 let liquid_size = 100;
@@ -20,7 +21,7 @@ let index = 1;
 let diff = 1; //dificuldade
 let diffMax = [0, 0, 0, 0, 0, 0];
 let resultado = 0;
-let score = 0, erros = 0;
+let score = 0, erros = 0, acertos = 0;
 let valePontos = 0; //multiplicador de pontos
 
 let f_score, f_erros, f_index;// Placares finais
@@ -35,7 +36,9 @@ let iniciar = function(){
 let gerarConta = function(){
     v1.value = Math.floor(Math.random() * (10 * Math.floor(diff)) + 2);
     v2.value = Math.floor(Math.random() * (10 * Math.floor(diff)) + 2); 
+    total++;
     setDiff();
+
 }
 
 let reset_time_count = function(){
@@ -70,6 +73,7 @@ let verificar = function(){
 
        diff += .1;
        tempo -= 1;
+       acertos++;
        //index++;
        //d_index.innerText = index;
        d_pontos.innerText = score;
@@ -137,9 +141,9 @@ let reduzVida = function(){
 
 let endGame = function(){
 
-    sessionStorage.setItem("f_erros", erros);
+    sessionStorage.setItem("f_total", total);
     sessionStorage.setItem("f_score", score);
-   // sessionStorage.setItem("f_index", index -1);
+    sessionStorage.setItem("f_acertos", acertos);
     sessionStorage.setItem("f_diffMax", diffMax);
     
     //go to results page
