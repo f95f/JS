@@ -14,8 +14,8 @@ let d_pontosGanhos = document.getElementById("pontosGanhos");
 let interval = null;
 
 let vidas = 10;
-let tempo = 60 *Math.pow(10, 8);
-let liquid_size = 200;
+let tempo = 60;// *Math.pow(10, 8);
+let liquid_size = 100;
 let index = 1;
 let diff = 1; //dificuldade
 let diffMax = [0, 0, 0, 0, 0, 0];
@@ -40,7 +40,7 @@ let gerarConta = function(){
 
 let reset_time_count = function(){
 
-    liquid_size = 200;
+    liquid_size = 100;
     clearInterval(interval);
     interval = setInterval("temporizar()", tempo);
 
@@ -49,7 +49,7 @@ let reset_time_count = function(){
 let temporizar = function(){
 
     liquid_size--;
-    d_liquid.style.width = liquid_size + "px";
+    d_liquid.style.width = liquid_size + "%";
     
     if(liquid_size < 1){
         verificar();
@@ -57,7 +57,7 @@ let temporizar = function(){
 
 }
 let restore_liquid_size = function(){
-    liquid_size = 200;
+    liquid_size = 100;
 }
 
 let verificar = function(){
@@ -70,10 +70,10 @@ let verificar = function(){
 
        diff += .1;
        tempo -= 1;
-       index++;
-       d_index.innerText = index;
+       //index++;
+       //d_index.innerText = index;
        d_pontos.innerText = score;
-       info.innerText = "Correto.";	
+       info.innerText = "Correto!";	
        info.setAttribute("class", "correto");
     }
     else{ 
@@ -86,7 +86,7 @@ let verificar = function(){
     
     d_resp.value = 0;
 
-    //restore_liquid_size();
+    //restore_liquid_size(); *
     reset_time_count();
     gerarConta();
     focar();
@@ -139,7 +139,7 @@ let endGame = function(){
 
     sessionStorage.setItem("f_erros", erros);
     sessionStorage.setItem("f_score", score);
-    sessionStorage.setItem("f_index", index -1);
+   // sessionStorage.setItem("f_index", index -1);
     sessionStorage.setItem("f_diffMax", diffMax);
     
     //go to results page
@@ -159,7 +159,7 @@ let setDiff = function(){
 
     if(((a == 2) || (a == 10) || (a == 20)) ||
        ((b == 2) || (b == 10) || (b == 20))){
-       stars = '*';
+       stars = '♦';
        valePontos = 1;
        diffMax[0] = 1;
     }
@@ -172,22 +172,22 @@ let setDiff = function(){
                (a < 10 && b < 10) )
               ){
 
-        stars = '**';	
+        stars = '♦ ♦';	
         valePontos = 3;
         diffMax = [1, 1];
     }
     else if(((a < 12 || b < 12) || (a % 10 || b % 10)) && (a < 51 && b < 51)){
-        stars = '***';
+        stars = '♦ ♦ ♦ ';
         valePontos = 5;
         diffMax = [1, 1, 1];
     }
     else if(a < 51 && b < 51){
-        stars = '****';
+        stars = '♦ ♦ ♦ ♦';
         valePontos = 10;
         diffMax = [1, 1, 1, 1];
     }
     else if(a < 100 || b < 100){
-        stars = '*****';
+        stars = '♦ ♦ ♦ ♦ ♦';
         valePontos = 25;
         diffMax = [1, 1, 1, 1, 1];
     }

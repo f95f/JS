@@ -1,12 +1,12 @@
 :root{
    --L1: #C6B7BE;
-   --M1: #2D2A2B;
+   --M1: #363334;
    --M2: #232121;
    --D1: #1E1C1D;
    --A1: #56B154;
    --A2: #FF2525;
 
-   --SHD: #36363644; 
+   --SHD: #12121266; 
 }
 
 *{
@@ -14,7 +14,8 @@
 	padding: 0;
 }
 body{
-    background-color: var(--L1);
+    background-color: var(--M1);
+    color: var(--M2);
     padding: 5%;
 }
 
@@ -29,32 +30,36 @@ main{
 div.head{
     display: inline-block;
     margin: 0; 
-    height: 70px;
+    height: 60px;
     text-align: center;
+    color: var(--M1);
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 div#header{
     width: 100%; 
+    background-color: var(--M2);
+    box-shadow:  3px 3px 8px var(--SHD);
 }
 div#acertos{
     padding: 10px 0;
     width: 120px;
-    outline: 1px solid cyan;
 }
 span#score{
     text-align: center;
     margin-right: 50px;
+
     font-size: 2em;
     font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
-    line-height: 60px;
+    line-height: 50px;
+    color: var(--L1);
+    text-shadow: 2px 2px 4px var(--SHD);
 }
 
 div#nivel{
-    text-align: left;
+    text-align: left;   
     width: 240px;
     float: right;
-    padding: 6px 0;
-    outline: 1px solid lime;
+    padding: 10px 0;
 }
 div#nivel span{
     margin: 20px; 
@@ -62,15 +67,25 @@ div#nivel span{
 }
 
 div#nivel span#dificuldade{  
+    
     margin-left: 0;
+}
+
+span#dificuldade{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px var(--SHD);
+    color: var(--A1);
 }
 
 div#lifebar{
     width: 202px;
     margin: auto;
-    padding: 5px;
+    padding: 0px;
     height: 20px;
     text-align: left;
+
+    box-shadow: 2px 2px 6px var(--SHD);
 }
 
 div.vida, div.vidaVazio{
@@ -84,127 +99,125 @@ div.vida, div.vidaVazio{
     box-shadow: inset 2px 2px 3px var(--SHD);
 }
 div.vidaVazio{
-    background-color: var(--L1);
+    background-color: var(--M2);
 }
 
 /*------------ Form Central ------------*/
 
 div#valores{
     height: 100px;
-    width: 240px;
-    margin: 0 20px;
-    border-radius: 50px;
+    width: 100%;
+    margin: 20px 0;
     text-align: center;
-    box-shadow: 3px 3px 8px var(--SHD),
-                -3px -3px 8px var(--ACC),
-                inset 1px 1px 3px var(--ACC),
-                inset -1px -1px 2px var(--SHD);
 }
+
 form{
     margin: auto;
-    color: var(--M1);
+    color: var(--M2);
     font-family: 'Comfortaas', Arial, Helvetica, sans-serif;
 }
 
 input.txt_valores{
-	font-size: 2.8em;
-	height: 60px;
-	width: 60px;
-	background-color: var(--L1);
-    color: var(--D2);
-    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
-	margin: 20px 8px;
+    display: inline-block;
+	height: 120px;
+	width: 100px;
+    padding: 0 30px;
+
 	border: none;
+    background-color: var(--M2);
+    box-shadow:  3px 3px 8px var(--SHD);
+
+    color: var(--L1);
+	font-size: 3em;
+    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
     text-shadow: 2px 2px 4px var(--SHD);
 }
+
 input#txt_v1{   text-align: right;}
 
 input#txt_resp{
-    width: 170px;
-    height: 40px;
-    margin: 30px 20px;
-    padding-right: 10px;
-
-    border-radius: 20px;
+    width: 100%;
+    height: 100px;
+    margin: 20px 0;
+    padding: 0;
+    
     border: none;
-    background-color: var(--L1);
-    text-align: right;
-    box-shadow: inset 3px 3px 6px var(--SHD),
-                inset -3px -3px 6px var(--ACC),
-                1px 1px 3px var(--ACC),
-                -1px -1px 3px var(--SHD);
-    color: var(--M1);
+    background-color: var(--M2);
     transition: box-shadow .3s;
+    text-shadow: 2px 2px 4px var(--SHD);
+    box-shadow:  3px 3px 8px var(--SHD);
+    
+    text-align: center;
+    font-size: 2em;
+    color: var(--L1);
+    
 }
 
 input#txt_resp:hover{
-    box-shadow: inset 1px 1px 3px var(--SHD),
-                inset -1px -1px 3px var(--ACC);
+    box-shadow: inset 0 3px 6px var(--SHD);
 }
 
 input#txt_resp:focus{
-    outline: 1px solid var(--DES);
+    outline: none;
 }
 
-input#btn_verificar{
-    width: 40px;
-    height: 40px;
-    margin-right: 20px;
+/*------- botão -------*/
 
-    border-radius: 100%;
-    border: none;
-    box-shadow: 3px 3px 8px var(--SHD),
-                -3px -3px 8px var(--ACC),
-                inset 1px 1px 3px var(--ACC),
-                inset -1px -1px 2px var(--SHD);
-
-    background-color: var(--L1);
-    color: var(--M1);
-    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    transition: box-shadow .5s;
+div#timebar{
+    width: 100%;
+    height: 5px;
+    background-color: var(--M1);
 }
 
 div#liquid{
-    width: 200px;
-    height: 3px;
+    width: 100%;
+    height: 5px;
     
-    background: linear-gradient(to right, var(--D1), var(--DES));
-    background: linear-gradient(to right, rgb(216, 49, 19), rgb(230, 127, 59));
-    border-radius: 3px;
+    background: var(--A2);
+
+    transition: all .1s;
 }
 
-div#timebar{
-    width: 202px;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 1px;
-    height: 3px;
-    box-shadow: 3px 3px 8px var(--SHD);
-    border-radius: 3px;
+input#btn_verificar{
+    width: 100%;
+    height: 100px;
+
+    border: none;
+    background-color: var(--M2);
+ 
+    color: var(--L1);
+    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+    font-size: 2.6em;
+    text-shadow: 2px 2px 4px var(--SHD);
+    box-shadow:  3px 3px 8px var(--SHD);
+
+    transition: box-shadow .5s;
 }
+
 
 input#btn_verificar:hover{
-    box-shadow: 1px 1px 3px var(--SHD),
-                -1px -1px 3px var(--ACC);
+
+    box-shadow: inset 0 3px 6px var(--SHD);
     cursor: pointer;
 }
 
 
-span#footer, span#dificuldade{  
+span#footer{  
+    margin: 20px 0;
+
     text-align: center;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
+
 span.correto{
-    color:rgb(32, 214, 108);
+    color: var(--A1);
 }
 
 span.errado{
-    color:rgb(214, 59, 32);
+    color:var(--A2);
 }
 span#pontosGanhos{
     text-align: left;
     margin-left: -50px; padding: 0;
-    color: var(--DES);
+    color: var(--A1);
 }
