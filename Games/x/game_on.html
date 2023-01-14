@@ -35,7 +35,7 @@
                 <input type = "text" id = "txt_v2" class = "txt_valores" disabled>
             </div>
 
-            <input type = "number" id = "txt_resp" autofocus onfocus = "this.value = ''" value = "0">
+            <input type = "number" id = "txt_resp" autofocus onfocus = "this.value = ''" placeholder = "= ?">
             
             <div id = "timebar">
                 <div id = "liquid"></div>
@@ -43,10 +43,12 @@
             <input type = "button" onclick = "verificar()" id = "btn_verificar" value = "OK!">
 
         </form>
-        
+
         <footer>
             
             <span id = "foot">Informe o resultado da operação acima e pressione o botão.</span>
+            <br>
+            <input type = "button" onclick = "endGame()" id = "btn_encerrar" value = "Finalizar">
         </footer>
     </main>
     <script src="script.js"></script>

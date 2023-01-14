@@ -43,10 +43,16 @@ let gerarConta = function(){
 
 let reset_time_count = function(){
 
+    d_liquid.style.backgroundColor = "var(--A1)";
     liquid_size = 100;
     clearInterval(interval);
-    interval = setInterval("temporizar()", tempo);
+    temporizar();
 
+    if((total % 5)){
+        d_liquid.style.backgroundColor = "var(--A2)";
+        interval = setInterval("temporizar()", tempo);
+
+    }
 }
 
 let temporizar = function(){
@@ -83,7 +89,7 @@ let verificar = function(){
     else{ 
         info.innerText = "Incorreto.";
         info.setAttribute("class", "errado");
-        tempo += 3; 
+        tempo += 6; 
         erros++;
         reduzVida();
     }
@@ -159,54 +165,65 @@ let setDiff = function(){
     let a = v1.value;
     let b = v2.value;
     let stars = '!';
-    valePontos = 100;
+    nivel.style.color = "var(--A1)"
 
-    if(((a == 2) || (a == 10) || (a == 20)) ||
-       ((b == 2) || (b == 10) || (b == 20))){
-       stars = '♦';
-       valePontos = 1;
-       diffMax[0] = 1;
+    if( (a <= 11 && b <= 11) && 
+        ((a == 2 || a == 10 || a == 11) || 
+         (b == 2 || b == 10 || b == 11)))
+    {
+        stars = 'X';
+        valePontos = 1;
+        diffMax[0] = 1;
     }
-    else if(
-               (
-        (a == 2 || a == 10 || a == 11 || a == 20) ||
-        (b == 2 || b == 10 || b == 11 || b == 20)
-               ) && (
-               (a < 50 && b < 50) ||
-               (a < 10 && b < 10) )
-              ){
+    else if((a <= 12 && b <= 12) ||
+            (( !(a % 10) && !(b % 10)) && 
+                (a <= 100 && b <= 100)))
+    {
 
-        stars = '♦ ♦';	
+        stars = 'XX';	
         valePontos = 3;
         diffMax = [1, 1];
+
     }
-    else if(((a < 12 || b < 12) || (a % 10 || b % 10)) && (a < 51 && b < 51)){
-        stars = '♦ ♦ ♦ ';
+    else if(((a <= 10 || b <= 10) &&
+             (a <= 50 && b <= 50)) || 
+            (a == 1000 || b == 1000))
+    {
+        stars = 'XXX';
         valePontos = 5;
         diffMax = [1, 1, 1];
     }
-    else if(a < 51 && b < 51){
-        stars = '♦ ♦ ♦ ♦';
+    else if((a <= 50 && b <= 50) ||
+            (!(a % 10) && !(b % 10)))
+    {
+        stars = 'XXXX';
         valePontos = 10;
         diffMax = [1, 1, 1, 1];
     }
-    else if(a < 100 || b < 100){
-        stars = '♦ ♦ ♦ ♦ ♦';
+    else if((a <= 100 && b <= 100) || (a <= 10 || b <= 10)){
+        stars = 'XXXXX';
         valePontos = 25;
         diffMax = [1, 1, 1, 1, 1];
     }
-    else{
-        diffMax[5] = 1;
+    else if(a < 500 && b < 500){
+        stars = '!';
+        valePontos = 100;
+        diffMax = [1, 1, 1, 1, 1, 1];
+        nivel.style.color = "var(--A2)"
     }
-    nivel.innerText = stars;
-}
-   /*
-       Dificuldades:
-                * -> v1 e v2 = 2, 10 ou 20	c = {2, 10, 20}
-              ** -> v1 ou v2 = 2, 10 ou 20; e v1 e v2 < 51; ou v1 e v2 < 12 
-            *** -> v1 ou v2 > 11; e v1 e v2 < 51
-          **** -> v1 e v2 < 51
-        ***** -> v1 e v2 > 51; ou v1 ou v2 > 100
-                  ! -> v1 e v2 > 100
+    else if(a < 1000 || b < 1000){
+        stars = '!!';
+        valePontos = 250;
+        diffMax = [1, 1, 1, 1, 1, 1, 1];
+        nivel.style.color = "var(--A2)"
+    }
+    else if(a > 1000 && b > 1000){
+        stars = '!!!';
+        valePontos = 500;
+        diffMax = [1, 1, 1, 1, 1, 1, 1, 1];
+        nivel.style.color = "var(--A2)"
+    }
    
-   */
+    nivel.innerText = stars;
+
+}
